@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions – Complete Notes</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1,h2,h3{
+            color: darkblue;
+        }
+        code{
+            background: #f4f4f4;
+            padding: 5px;
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>JavaScript Functions</h1>
+
+<h2>What is a Function?</h2>
+<p>
+A <b>function</b> is a block of code that performs a specific task.
+It runs only when it is <b>called</b>.
+</p>
+
+<p><b>Example:</b> Making tea again and again → write steps once → call whenever needed.</p>
+
+<hr>
+
+<h2>Parts of a Function</h2>
+
+<h3>1) Function Definition</h3>
+<p>Writing the function code is called function definition.</p>
+
+<code>
+function greet(){
+    alert("Hello");
+}
+</code>
+
+<h3>2) Function Call</h3>
+<p>Using the function is called function calling.</p>
+
+<code>
+greet();
+</code>
+
+<hr>
+
+<h2>Important Terms</h2>
+
+<ul>
+    <li><b>Parameter:</b> Variable used while defining function</li>
+    <li><b>Argument:</b> Value passed while calling function</li>
+    <li><b>Return:</b> Sends value back from function</li>
+</ul>
+
+<hr>
+
+<h1>4 Types of Functions</h1>
+
+<hr>
+
+<h2>1) Simple Function (No Parameter, No Return)</h2>
+<p>Only performs task.</p>
+
+<code>
+function hello(){
+    console.log("Hello World");
+}
+hello();
+</code>
+
+<h3>10 Examples</h3>
+
+<code>
+function ex1(){ console.log("One"); } ex1();
+function ex2(){ alert("Two"); } ex2();
+function ex3(){ console.log(5+5); } ex3();
+function ex4(){ document.write("Hello"); } ex4();
+function ex5(){ console.log("JS"); } ex5();
+function ex6(){ console.log(true); } ex6();
+function ex7(){ console.log(100); } ex7();
+function ex8(){ console.log("Learning"); } ex8();
+function ex9(){ console.log("Function"); } ex9();
+function ex10(){ console.log("Done"); } ex10();
+</code>
+
+<hr>
+
+<h2>2) Function with Return (No Parameter)</h2>
+<p>Returns value but does not take input.</p>
+
+<h3>10 Examples</h3>
+
+<code>
+function a(){ return 10; } console.log(a());
+function b(){ return "Hello"; } console.log(b());
+function c(){ return 5+5; } console.log(c());
+function d(){ return true; } console.log(d());
+function e(){ return 100; } console.log(e());
+function f(){ return "JS"; } console.log(f());
+function g(){ return 50-20; } console.log(g());
+function h(){ return 2*5; } console.log(h());
+function i(){ return "Done"; } console.log(i());
+function j(){ return 1; } console.log(j());
+</code>
+
+<hr>
+
+<h2>3) Function with Return & Parameter</h2>
+<p>Takes input and returns output.</p>
+
+<h3>10 Examples</h3>
+
+<code>
+function add(a,b){ return a+b; } console.log(add(2,3));
+function sub(a,b){ return a-b; } console.log(sub(5,2));
+function mul(a,b){ return a*b; } console.log(mul(2,4));
+function div(a,b){ return a/b; } console.log(div(10,2));
+function sq(a){ return a*a; } console.log(sq(5));
+function cube(a){ return a*a*a; } console.log(cube(3));
+function greet(n){ return "Hello "+n; } console.log(greet("Ram"));
+function age(a){ return a>=18; } console.log(age(20));
+function len(s){ return s.length; } console.log(len("JS"));
+function double(x){ return x*2; } console.log(double(6));
+</code>
+
+<hr>
+
+<h2>4) Function without Return but With Parameter</h2>
+<p>Takes input but does not return anything.</p>
+
+<h3>10 Examples</h3>
+
+<code>
+function show(a){ console.log(a); } show(10);
+function msg(n){ alert("Hi "+n); } msg("Aman");
+function sum(a,b){ console.log(a+b); } sum(5,5);
+function print(s){ document.write(s); } print("Hello");
+function even(n){ console.log(n%2==0); } even(4);
+function sqr(a){ console.log(a*a); } sqr(6);
+function cube(a){ console.log(a*a*a); } cube(2);
+function len(s){ console.log(s.length); } len("Code");
+function check(a){ console.log(a>0); } check(5);
+function greet(n){ console.log("Welcome "+n); } greet("Shubham");
+</code>
+
+<hr>
+
+<h2>Conclusion</h2>
+<ul>
+    <li>Function saves time</li>
+    <li>Improves reusability</li>
+    <li>Makes code clean</li>
+</ul>
+
+</body>
+</html>
