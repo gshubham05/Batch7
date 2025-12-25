@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3D Hover | Flip | Slider | Carousel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* BASIC RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial;
+}
+
+body{
+    background:#f2f2f2;
+    padding:20px;
+}
+
+h2{
+    margin:20px 0 10px;
+}
+
+/* COMMON CARD STYLE */
+.scene{
+    width:200px;
+    height:250px;
+    perspective:800px;
+}
+
+.card{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style: preserve-3d;
+    transition:0.8s;
+}
+
+.face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:22px;
+    border-radius:10px;
+    backface-visibility:hidden;
+}
+
+/* -------------------------------- */
+/* 1️⃣ HOVER 3D CARD */
+/* -------------------------------- */
+.hover-card{
+    background:#007bff;
+}
+
+.hover-card:hover{
+    transform: rotateY(20deg) rotateX(10deg);
+}
+
+/* -------------------------------- */
+/* 2️⃣ FLIP CARD */
+/* -------------------------------- */
+.flip .front{
+    background:#e63946;
+}
+
+.flip .back{
+    background:#2a9d8f;
+    transform: rotateY(180deg);
+}
+
+.flip:hover{
+    transform: rotateY(180deg);
+}
+
+/* -------------------------------- */
+/* 3️⃣ SLIDER */
+/* -------------------------------- */
+.slider{
+    width:200px;
+    height:250px;
+    perspective:800px;
+    overflow:hidden;
+}
+
+.slider-track{
+    display:flex;
+    width:600px;
+    transform-style: preserve-3d;
+    animation: slide 6s infinite;
+}
+
+.slide{
+    width:200px;
+    height:250px;
+    background:#6a4c93;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    font-size:22px;
+}
+
+@keyframes slide{
+    0%{transform:translateX(0)}
+    33%{transform:translateX(-200px)}
+    66%{transform:translateX(-400px)}
+    100%{transform:translateX(0)}
+}
+
+/* -------------------------------- */
+/* 4️⃣ CAROUSEL */
+/* -------------------------------- */
+.carousel{
+    width:200px;
+    height:250px;
+    perspective:1000px;
+}
+
+.carousel-box{
+    width:100%;
+    height:100%;
+    position:relative;
+    transform-style: preserve-3d;
+    animation: rotate 6s infinite linear;
+}
+
+.carousel-item{
+    position:absolute;
+    width:200px;
+    height:250px;
+    background:#ffb703;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.carousel-item:nth-child(1){transform: rotateY(0deg) translateZ(150px);}
+.carousel-item:nth-child(2){transform: rotateY(120deg) translateZ(150px);}
+.carousel-item:nth-child(3){transform: rotateY(240deg) translateZ(150px);}
+
+@keyframes rotate{
+    from{transform: rotateY(0deg)}
+    to{transform: rotateY(360deg)}
+}
+</style>
+</head>
+
+<body>
+
+<h2>1️⃣ 3D Hover Card</h2>
+<div class="scene">
+    <div class="card hover-card face">
+        HOVER ME
+    </div>
+</div>
+
+<h2>2️⃣ Flip Card</h2>
+<div class="scene">
+    <div class="card flip">
+        <div class="face front">FRONT</div>
+        <div class="face back">BACK</div>
+    </div>
+</div>
+
+<h2>3️⃣ Slider</h2>
+<div class="slider">
+    <div class="slider-track">
+        <div class="slide">Slide 1</div>
+        <div class="slide">Slide 2</div>
+        <div class="slide">Slide 3</div>
+    </div>
+</div>
+
+<h2>4️⃣ 3D Carousel</h2>
+<div class="carousel">
+    <div class="carousel-box">
+        <div class="carousel-item">One</div>
+        <div class="carousel-item">Two</div>
+        <div class="carousel-item">Three</div>
+    </div>
+</div>
+
+</body>
+</html>

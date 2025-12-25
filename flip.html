@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 3D Properties Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background:#f5f5f5;
+            padding:20px;
+        }
+
+        section{
+            background:white;
+            padding:20px;
+            margin-bottom:20px;
+            border-radius:8px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1,h2{
+            color:#333;
+        }
+
+        code{
+            background:#eee;
+            padding:3px 6px;
+            border-radius:4px;
+        }
+
+        /* Flip Card Styles */
+        .scene{
+            width:200px;
+            height:260px;
+            perspective:800px; /* perspective applied here */
+            margin-top:20px;
+        }
+
+        .card{
+            width:100%;
+            height:100%;
+            position:relative;
+            transform-style: preserve-3d; /* preserve 3D */
+            transition: transform 0.8s;
+        }
+
+        .scene:hover .card{
+            transform: rotateY(180deg);
+        }
+
+        .face{
+            position:absolute;
+            width:100%;
+            height:100%;
+            backface-visibility: hidden; /* hide backside */
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:20px;
+            font-weight:bold;
+            color:white;
+            border-radius:10px;
+        }
+
+        .front{
+            background:#007bff;
+        }
+
+        .back{
+            background:#28a745;
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+
+<h1>CSS 3D Properties – Easy Notes</h1>
+
+<section>
+    <h2>1. perspective</h2>
+    <p>
+        <b>Definition:</b><br>
+        <code>perspective</code> defines how far the object is from the viewer.
+        It gives a <b>3D depth effect</b>.
+    </p>
+
+    <p>
+        Smaller value → stronger 3D effect<br>
+        Bigger value → flatter effect
+    </p>
+
+    <p>
+        <b>Syntax:</b><br>
+        <code>perspective: 800px;</code>
+    </p>
+
+    <p>
+        <b>Where we use it?</b>
+    </p>
+    <ul>
+        <li>Card flip animations</li>
+        <li>3D sliders</li>
+        <li>Image hover effects</li>
+        <li>Gaming UI</li>
+    </ul>
+</section>
+
+<section>
+    <h2>2. transform-style: preserve-3d</h2>
+    <p>
+        <b>Definition:</b><br>
+        <code>preserve-3d</code> tells the browser to keep child elements in 3D space.
+    </p>
+
+    <p>
+        Without it → child elements become flat (2D)<br>
+        With it → real 3D rotation works
+    </p>
+
+    <p>
+        <b>Syntax:</b><br>
+        <code>transform-style: preserve-3d;</code>
+    </p>
+
+    <p>
+        <b>Where we use it?</b>
+    </p>
+    <ul>
+        <li>Flip cards</li>
+        <li>3D boxes</li>
+        <li>Cube animations</li>
+        <li>Carousel effects</li>
+    </ul>
+</section>
+
+<section>
+    <h2>3. backface-visibility</h2>
+    <p>
+        <b>Definition:</b><br>
+        <code>backface-visibility</code> controls whether the backside of an element is visible when rotated.
+    </p>
+
+    <p>
+        <b>Values:</b>
+    </p>
+    <ul>
+        <li><code>visible</code> → backside shows</li>
+        <li><code>hidden</code> → backside hides</li>
+    </ul>
+
+    <p>
+        <b>Syntax:</b><br>
+        <code>backface-visibility: hidden;</code>
+    </p>
+
+    <p>
+        <b>Where we use it?</b>
+    </p>
+    <ul>
+        <li>Card flip animations</li>
+        <li>Login/Register flip forms</li>
+        <li>Quiz apps</li>
+        <li>Product detail cards</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Example: Card Flip Animation</h2>
+    <p>
+        Hover on the card to see how:
+        <ul>
+            <li><b>perspective</b> gives depth</li>
+            <li><b>preserve-3d</b> keeps both sides</li>
+            <li><b>backface-visibility</b> hides unwanted side</li>
+        </ul>
+    </p>
+
+    <div class="scene">
+        <div class="card">
+            <div class="face front">
+                FRONT
+            </div>
+            <div class="face back">
+                BACK
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Interview / Exam Short Notes</h2>
+    <ul>
+        <li><b>perspective</b> → gives depth</li>
+        <li><b>preserve-3d</b> → keeps child elements in 3D</li>
+        <li><b>backface-visibility</b> → hides backside on rotation</li>
+    </ul>
+</section>
+
+</body>
+</html>
